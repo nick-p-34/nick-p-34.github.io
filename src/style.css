@@ -1,15 +1,43 @@
 :root {
   --bg-color: #0f0f0f;
   --text-color: white;
+  --secondary-text: #a0a0a0;
   --accent-color: #bf00ff;
   --secondary-bg: #1c1c1c;
 }
 
-body {
+[data-theme='light'] {
+  --bg-color: #fff;
+  --text-color: #111;
+  --secondary-text: #3b3b3b;
+  --secondary-bg: #f0f0f0;
+  --accent-color: #8b00cc;
+}
+
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: "Segoe UI", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .app-container {
@@ -19,24 +47,21 @@ body {
 }
 
 .navbar {
+  position: relative;
   background-color: var(--secondary-bg);
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.logo {
-  color: var(--accent-color);
-  font-size: 1.8rem;
-  font-weight: bold;
+  justify-content: center;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .nav-links a {
@@ -49,46 +74,146 @@ body {
   color: var(--accent-color);
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdown-label {
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  margin-top: 1.2rem;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--accent-color);
+}
+
 .content {
   flex: 1;
   padding: 2rem;
 }
 
 .footer {
-  background-color: var(--secondary-bg);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   padding: 1rem;
-  border-top: 2px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  background-color: var(--secondary-bg);
 }
 
-.home h2 {
-  font-size: 2.5rem;
-  color: var(--accent-color);
+.footer-text {
+  margin: 0 auto;
+  text-align: center;
+  color: var(--secondary-text);
 }
 
-.projects {
-  margin-top: 2rem;
+.theme-toggle {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.project-card {
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.home, .resume, .contact {
+  padding: 5rem;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.intro-text {
+  max-width: 600px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   background-color: var(--secondary-bg);
   border: 1px solid var(--accent-color);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  color: var(--text-color);
+  width: 150px;
+  transition: background-color 0.3s ease;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--accent-color);
+.social-button:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-color: #f5f5f5;
-    --text-color: #0f0f0f;
-    --accent-color: #8000c9;
-    --secondary-bg: #ffffff;
-  }
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  object-fit: cover;
+  border: none;
+  padding: 0;
 }
