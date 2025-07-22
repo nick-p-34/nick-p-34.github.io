@@ -1,7 +1,7 @@
 import React from "react";
-import linkedinLogo from "../img/linkedin.png";
-import githubLogo from "../img/github.png";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import pfp from "../img/pfp.png";
+import "../style.css";
 
 export default function Home() {
   return (
@@ -10,16 +10,24 @@ export default function Home() {
         <img src={pfp} alt="Profile" className="profile-pic" />
         <div className="intro-text">
           <h2>Nick Parke</h2>
-          <p>
-            Software Developer and Motorsport Enthusiast
-          </p>
+          <p>Software Developer and Motorsport Enthusiast</p>
           <div className="social-links">
-            <a href="https://www.linkedin.com/in/nick-parke34/" target="_blank" rel="noopener noreferrer" className="social-button">
-              <img src={linkedinLogo} alt="LinkedIn" className="social-icon" />
+            <a
+              href="https://www.linkedin.com/in/nick-parke34/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-button"
+            >
+              <FaLinkedin className="social-icon" size={32} />
               <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/nick-p-34" target="_blank" rel="noopener noreferrer" className="social-button">
-              <img src={githubLogo} alt="GitHub" className="social-icon" />
+            <a
+              href="https://github.com/nick-p-34"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-button"
+            >
+              <FaGithub className="social-icon" size={32} />
               <span>GitHub</span>
             </a>
           </div>
