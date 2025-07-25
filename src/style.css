@@ -21,10 +21,6 @@ html, body {
   padding: 0;
 }
 
-body, * {
-  cursor: none !important;
-}
-
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: var(--bg-color);
