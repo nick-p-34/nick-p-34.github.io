@@ -21,10 +21,7 @@ export default function App() {
   return (
     <Router>
       <div className="app">
-        <NavBar
-          theme={theme}
-          onToggleTheme={toggleTheme}
-        />
+        <NavBar theme={theme} onToggleTheme={toggleTheme} />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
