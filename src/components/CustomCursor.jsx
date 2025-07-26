@@ -1,51 +1,63 @@
-import React, { useEffect, useRef, useState } from 'react';
-import '../style.css';
+ import React, { useEffect, useRef, useState } from 'react';
+ import '../style.css';
 
-export default function CustomCursor() {
+ export default function CustomCursor() {
   const cursorRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    const cursor = cursorRef.current;
+    const mq = window.matchMedia('(pointer: coarse)');
+    setIsTouchDevice(mq.matches);
 
-    const handleMove = e => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    };
+  const handler = e => setIsTouchDevice(e.matches);
+  mq.addEventListener('change', handler);
 
-    const handleDown = () => cursor.classList.add('click');
-    const handleUp = () => cursor.classList.remove('click');
+  const cursor = cursorRef.current;
+  if (!cursor || isTouchDevice) return;
 
-    const handleLoadStart = () => setLoading(true);
-    const handleLoadEnd = () => setLoading(false);
+  const handleMove = e => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  };
 
-    const handleHover = e => {
-      const interactive = e.target.closest('a, button, [role="button"], .social-button, .dropdown-label, .profile-pic, .resume-pic-overlay');
-       cursor.classList.toggle('hover', !!interactive);
+  const handleDown = () => cursor.classList.add('click');
+  const handleUp = () => cursor.classList.remove('click');
 
-       const textInput = e.target.closest('input[type="text"], textarea, p, span, h1, h2, h3, h4, h5, h6, li');
-       const isPlainText = textInput && !interactive;
-       cursor.classList.toggle('text-hover', !!isPlainText);
-    };
+  const handleLoadStart = () => setLoading(true);
+  const handleLoadEnd = () => setLoading(false);
 
-    document.addEventListener('mousemove', handleMove);
-    document.addEventListener('mousedown', handleDown);
-    document.addEventListener('mouseup', handleUp);
-    document.addEventListener('mouseover', handleHover);
-    document.addEventListener('mouseout', handleHover);
-    window.addEventListener('beforeunload', handleLoadStart);
-    window.addEventListener('load', handleLoadEnd);
+  const handleHover = e => {
+    const interactive = e.target.closest('a, button, [role="button"], .social-button, .dropdown-label, .profile-pic, .resume-pic-overlay');
+    cursor.classList.toggle('hover', !!interactive);
 
-    return () => {
-      document.removeEventListener('mousemove', handleMove);
-      document.removeEventListener('mousedown', handleDown);
-      document.removeEventListener('mouseup', handleUp);
-      document.removeEventListener('mouseover', handleHover);
-      document.removeEventListener('mouseout', handleHover);
-      window.removeEventListener('beforeunload', handleLoadStart);
-      window.removeEventListener('load', handleLoadEnd);
-    };
-  }, []);
+    const textInputElement = e.target.closest('input[type="text"], .plain-text, .subtitle, .section-title, .resume-list li, p');
+    const textInput = textInputElement ? textInputElement.innerHTML.trim() : null;
+    const isPlainText = textInput && !interactive;
+    cursor.classList.toggle('text-hover', !!isPlainText);
+  };
+
+  document.addEventListener('mousemove', handleMove);
+  document.addEventListener('mousedown', handleDown);
+  document.addEventListener('mouseup', handleUp);
+  document.addEventListener('mouseover', handleHover);
+  document.addEventListener('mouseout', handleHover);
+  window.addEventListener('beforeunload', handleLoadStart);
+  window.addEventListener('load', handleLoadEnd);
+
+  return () => {
+    document.removeEventListener('mousemove', handleMove);
+    document.removeEventListener('mousedown', handleDown);
+    document.removeEventListener('mouseup', handleUp);
+    document.removeEventListener('mouseover', handleHover);
+    document.removeEventListener('mouseout', handleHover);
+    window.removeEventListener('beforeunload', handleLoadStart);
+    window.removeEventListener('load', handleLoadEnd);
+    mq.removeEventListener('change', handler);
+  };
+}, [isTouchDevice]);
+
+  if (isTouchDevice) return null;
 
   return <div ref={cursorRef} className={`custom-cursor${loading ? ' loading' : ''}`} />;
-}
+ }

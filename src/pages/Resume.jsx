@@ -10,7 +10,7 @@ export default function Resume() {
       <div className="resume-header">
         <img src={pfp} alt="Profile" className="resume-pic-overlay" />
         <div className="header-left">
-          <h2>Nick Parke</h2>
+          <h2 className="plain-text">Nick Parke</h2>
           <p className="subtitle">Software Developer</p>
         </div>
         <div className="contact-info">
@@ -90,7 +90,7 @@ export default function Resume() {
 
       <div className="resume-section">
         <h3 className="section-title">Skills</h3>
-        <ul className="skills-grid">
+        <ul className="resume-list">
           <li><strong>Languages:</strong> Python, Java, SQL, JavaScript, TypeScript, HTML5, CSS, R</li>
           <li><strong>Frameworks:</strong> Node.js, NPM, Angular, React, Jasmine, Pandas</li>
           <li><strong>DevOps:</strong> GitHub/GitLab, Bamboo CI/CD, JIRA, Docker, Kubernetes, Rancher, Datadog</li>

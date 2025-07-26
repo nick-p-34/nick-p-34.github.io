@@ -9,8 +9,8 @@ export default function Home() {
       <div className="intro-container">
         <img src={pfp} alt="Profile" className="profile-pic" />
         <div className="intro-text">
-          <h2>Nick Parke</h2>
-          <p>Software Developer and Motorsport Enthusiast</p>
+          <h2 className="plain-text">Nick Parke</h2>
+          <p className="plain-text">Software Developer and Motorsport Enthusiast</p>
           <div className="social-links">
             <a
               href="https://www.linkedin.com/in/nick-parke34/"
