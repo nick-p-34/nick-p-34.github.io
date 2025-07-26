@@ -491,8 +491,6 @@ intro-text h2 { margin-bottom: 0.5rem; }
 .contact-form {
   width: 100%;
   max-width: 600px;
-  background-color: var(--secondary-bg);
-  border-radius: 12px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -503,7 +501,7 @@ intro-text h2 { margin-bottom: 0.5rem; }
 .contact-form textarea,
 .contact-form select,
 .contact-form .form-select {
-  background-color: var(--bg-color);
+  background-color: var(--secondary-bg);
   color: var(--text-color);
   border: 1px solid transparent;
   border-radius: 8px;
@@ -544,6 +542,8 @@ intro-text h2 { margin-bottom: 0.5rem; }
   border-radius: 9999px;
   color: var(--text-color);
   text-decoration: none;
+  font-family: inherit;
+  font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -565,7 +565,6 @@ intro-text h2 { margin-bottom: 0.5rem; }
 
 .contact-form .form-select.dropdown-label {
   width: 100%;
-  background-color: var(--bg-color);
   color: var(--text-color);
   border: 1px solid transparent;
   border-radius: 8px;
