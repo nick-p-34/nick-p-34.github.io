@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import pfp from "../img/pfp.png";
+import pfp from "../ext_files/pfp.png";
 import "../style.css";
 
 export default function Home() {

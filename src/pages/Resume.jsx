@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa";
-import cv from "../img/NickParke_CV_Jul2025.pdf";
-import pfp from "../img/pfp.png";
+import cv from "../ext_files/NickParke_CV_Jul2025.pdf";
+import pfp from "../ext_files/pfp.png";
 import "../style.css";
 
 export default function Resume() {
@@ -126,7 +126,7 @@ export default function Resume() {
         </div>
 
         <div className="award-item">
-          <p className="award-title">Boys’ Brigade President’s Badge</p>
+          <p className="award-title">Boys’ Brigade Queen’s Badge</p>
           <p className="award-date">Youth Leadership, 2019</p>
           <ul className="resume-list">
             <li>Achieved the highest youth leadership award, leading team activities and organising community service projects, becoming a Non-Commissioned Officer in the largest company in the Battalion.</li>
