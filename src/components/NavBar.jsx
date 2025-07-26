@@ -77,8 +77,8 @@ export default function NavBar({ onToggleTheme, theme }) {
             <span className="dropdown-label">More Sites ▾</span>
             {open && (
               <ul className="dropdown-menu animated-dropdown">
-                <li><a href="/art-gallery">TBD 1</a></li>
-                <li><a href="/racing-blog">TBD 2</a></li>
+                <li><a href="/404">TBD 1</a></li>
+                <li><a href="/404">TBD 2</a></li>
               </ul>
             )}
           </li>
