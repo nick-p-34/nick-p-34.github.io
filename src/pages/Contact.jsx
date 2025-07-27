@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
+import { FaPaperPlane } from "react-icons/fa";
 import "../style.css";
 
 const subjects = [
@@ -208,7 +209,7 @@ export default function Contact() {
             className={`form-textarea card ${
               errors.message ? "error-border" : ""
             }`}
-            rows="3"
+            rows="10"
             value={formData.message}
             onChange={handleChange}
             onFocus={() => clearError("message")}
@@ -219,7 +220,8 @@ export default function Contact() {
         </div>
 
         <button type="submit" className="social-button">
-          Send Message
+          <FaPaperPlane className="social-icon" size={32} />
+          <span>Send Message</span>
         </button>
       </form>
     </section>
