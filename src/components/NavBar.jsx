@@ -25,6 +25,20 @@ export default function NavBar({ onToggleTheme, theme }) {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [mobileDropdownClosing, setMobileDropdownClosing] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && mobileOpen) {
+        setMobileOpen(false);
+        setMobileClosing(false);
+        setMobileDropdownOpen(false);
+        setMobileDropdownClosing(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [mobileOpen]);
+
   const handleMobileToggle = () => {
     if (mobileOpen) {
       setMobileClosing(true);
@@ -74,7 +88,9 @@ export default function NavBar({ onToggleTheme, theme }) {
             onMouseEnter={() => { clearTimeout(timeoutRef.current); setOpen(true); }}
             onMouseLeave={() => { timeoutRef.current = setTimeout(() => setOpen(false), 150); }}
           >
-            <span className="dropdown-label">More Sites ▾</span>
+            <span className="dropdown-label icon-transition">
+              More Sites {open ? <IoIosArrowDown size={16} /> : <IoIosArrowForward size={16} />}
+            </span>
             {open && (
               <ul className="dropdown-menu animated-dropdown">
                 <li><a href="/404">TBD 1</a></li>
@@ -123,8 +139,7 @@ export default function NavBar({ onToggleTheme, theme }) {
                 className="mobile-dropdown-label icon-transition"
                 onClick={handleMobileDropdown}
               >
-                More Sites{" "}
-                {mobileDropdownOpen
+                More Sites {mobileDropdownOpen
                   ? <IoIosArrowDown size={16} />
                   : <IoIosArrowForward size={16} />
                 }
@@ -136,8 +151,8 @@ export default function NavBar({ onToggleTheme, theme }) {
                   }`}
                   onAnimationEnd={handleDropdownAnimationEnd}
                 >
-                  <li><Link to="/art-gallery" onClick={handleMobileToggle}>TBD 1</Link></li>
-                  <li><Link to="/racing-blog" onClick={handleMobileToggle}>TBD 2</Link></li>
+                  <li><Link to="/404" onClick={handleMobileToggle}>TBD 1</Link></li>
+                  <li><Link to="/404" onClick={handleMobileToggle}>TBD 2</Link></li>
                 </ul>
               )}
             </li>

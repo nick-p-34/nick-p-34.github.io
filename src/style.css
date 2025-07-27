@@ -183,9 +183,24 @@ main {
   padding: 0;
   color: var(--text-color);
   cursor: pointer;
+  font-family: inherit;
+}
+
+.mobile-theme {
+  margin-top: 1rem;
 }
 
 .mobile-only { display: none; }
+
+.animated-dropdown {
+  animation: expandFade 0.3s ease forwards;
+  transform-origin: top;
+}
+
+.animated-dropdown-close {
+  animation: collapseFade 0.3s ease forwards;
+  transform-origin: top;
+}
 
 @media (max-width: 768px) {
   .desktop-only { display: none; }  .mobile-only { display: block; }
