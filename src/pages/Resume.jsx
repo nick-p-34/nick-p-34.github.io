@@ -14,7 +14,7 @@ export default function Resume() {
           <p className="subtitle">Software Developer</p>
         </div>
         <div className="contact-info">
-          <p>Email: <a href="mailto:nick.parke34@gmail.com">nick.parke34@gmail.com</a></p>
+          <p>Email: <a href="/contact" target="_self">contact@nickparke.co.uk</a></p>
           <p>Phone: <a href="tel:+447709105737">(+44) 07709 105737</a></p>
           <p>Location: Ballyclare, Co. Antrim</p>
           <p>References: Available on request</p>
@@ -23,7 +23,7 @@ export default function Resume() {
 
       <div className="resume-section">
         <h3 className="section-title">Professional Summary</h3>
-        <p>Detail-oriented software engineer and recent Computer Science graduate from Queen’s University Belfast, with a year’s experience building and maintaining a TypeScript/Angular component library and CI/CD pipelines at Liberty IT. Proven ability to improve code quality through automated testing, and to streamline deployments using Bamboo and GitHub. Strong collaborator skilled in Agile methodologies, leading meetings, and delivering stakeholder presentations.</p>
+        <p>Detail-oriented software engineer with a BSc in Computer Science from Queen’s University Belfast, seeking graduate software development roles. Completed a year-long placement at Liberty IT, building a scalable TypeScript/Angular component library and streamlining CI/CD pipelines. Improved code quality through automated testing and boosted deployment efficiency with Bamboo and GitHub. Strong communicator and proactive team player, experienced in Agile workflows, leading planning sessions, and presenting to stakeholders.</p>
       </div>
 
       <div className="resume-section">
