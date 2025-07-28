@@ -1,10 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaDownload } from "react-icons/fa";
-import cv from "../ext_files/NickParke_CV_Jul2025.pdf";
 import pfp from "../ext_files/pfp.png";
 import "../style.css";
 
 export default function Resume() {
+  const [cvBlobUrl, setCvBlobUrl] = useState(null);
+    const [fileName, setFileName] = useState("NickParke_CV.pdf");
+
+    useEffect(() => {
+      const fetchPdf = async () => {
+        try {
+          const response = await fetch("../ext_files/NickParke_CV.pdf");
+          let lastModified = response.headers.get("Last-Modified");
+          let date;
+
+          if (lastModified) {
+            date = new Date(lastModified);
+          }
+
+          else {
+            date = new Date();
+          }
+
+          const month = date.toLocaleString("default", { month: "short" });
+          const year = date.getFullYear();
+          const formattedName = `NickParke_CV_${month}${year}.pdf`;
+
+          const blob = await response.blob();
+          const file = new File([blob], formattedName, { type: blob.type });
+
+          const url = URL.createObjectURL(file);
+          setCvBlobUrl(url);
+          setFileName(formattedName);
+        }
+
+        catch (err) {
+          console.error("Failed to load CV file:", err);
+        }
+      };
+
+      fetchPdf();
+    }, []);
+
   return (
     <section className="resume">
       <div className="resume-header">
@@ -135,10 +172,12 @@ export default function Resume() {
       </div>
 
 
-      <a href={cv} download className="social-button">
-        <FaDownload className="social-icon" size={20} />
-        <span>Download CV</span>
-      </a>
+      {cvBlobUrl && (
+        <a href={cvBlobUrl} download={fileName} className="social-button">
+          <FaDownload className="social-icon" size={20} />
+          <span>Download CV</span>
+        </a>
+      )}
     </section>
   );
 }
