@@ -99,8 +99,8 @@ export default function Contact() {
         : subjectObj.value;
 
     const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
+      name: formData.name,
+      email: formData.email,
       subject: finalSubject,
       message: formData.message,
     };
