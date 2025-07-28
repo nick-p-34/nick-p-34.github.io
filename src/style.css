@@ -26,6 +26,7 @@ html, body {
 body {
   font-family: "Roboto Mono", sans-serif;
   line-height: 1.5;
+  text-spacing: 3px;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -516,7 +517,6 @@ intro-text h2 { margin-bottom: 0.5rem; }
 
 .contact .section-title {
   text-align: left;
-  letter-spacing: -2px;
 }
 
 .contact-form {

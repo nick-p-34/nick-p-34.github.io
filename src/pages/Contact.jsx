@@ -187,12 +187,12 @@ export default function Contact() {
                 >
                   {({ active, selected, disabled }) => (
                     <span
-                      className={``
+                      className={`
                         block px-4 py-2
                         ${active ? "bg-secondary-bg" : ""}
                         ${selected ? "font-bold" : ""}
                         ${disabled ? "text-secondary-text cursor-default" : ""}
-                      ``}
+                      `}
                     >
                       {s.label}
                     </span>
