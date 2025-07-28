@@ -4,9 +4,9 @@ import { FaPaperPlane } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import "../style.css";
 
-const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
+const SERVICE_ID = "service_307qxm5";
+const TEMPLATE_ID = "template_tx2j09c";
+const USER_ID = "8KVYC4vO5x2uVwS1I";
 
 const subjects = [
   { value: "", label: "Subject (Please Select)", disabled: true },
