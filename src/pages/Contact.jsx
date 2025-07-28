@@ -122,7 +122,6 @@ export default function Contact() {
   return (
     <section className="contact">
       <h2 className="section-title">Contact Me</h2>
-      <p className="subtitle">Reach out and I’ll get back to you soon.</p>
 
       {submissionStatus && (
         <p className={`submit-text ${submissionStatus.type === 'error' ? 'error-text' : 'success-text'}`}>
