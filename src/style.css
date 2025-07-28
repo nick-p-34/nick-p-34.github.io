@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");
+
 :root {
   --bg-color: rgb(15, 15, 15);
   --text-color: rgb(255, 255, 255);
@@ -22,7 +24,8 @@ html, body {
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
+  line-height: 1.5;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -265,6 +268,7 @@ main {
 
   .contact .section-title {
     margin-top: 0.5rem;
+    letter-spacing: -2px;
   }
 
   .contact-form {
@@ -340,10 +344,10 @@ main {
   top: 0; left: 0;
   width: 150px;
   height: 150px;
-  transform: translate(-60%, -10%);
+  transform: translate(-80%, -10%);
 }
 
-.resume-pic-overlay:hover { transform: translate(-60%, -10%) scale(1.1); box-shadow: var(--hover-shadow); }
+.resume-pic-overlay:hover { transform: translate(-80%, -10%) scale(1.2); box-shadow: var(--hover-shadow); }
 
 .intro-container {
   display: flex;
@@ -419,12 +423,9 @@ intro-text h2 { margin-bottom: 0.5rem; }
   transform: translate(12.5%, 0);
 }
 
-.header-left {
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.header-left h2 {
+.header-left .section-title {
   font-size: 2.5rem;
+  letter-spacing: -2px;
   margin: 0;
   color: var(--text-color);
 }
@@ -515,6 +516,7 @@ intro-text h2 { margin-bottom: 0.5rem; }
 
 .contact .section-title {
   text-align: left;
+  letter-spacing: -2px;
 }
 
 .contact-form {

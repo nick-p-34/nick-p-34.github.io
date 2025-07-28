@@ -10,7 +10,7 @@ export default function Resume() {
       <div className="resume-header">
         <img src={pfp} alt="Profile" className="resume-pic-overlay" />
         <div className="header-left">
-          <h2 className="plain-text">Nick Parke</h2>
+          <h2 className="section-title">Nick Parke</h2>
           <p className="subtitle">Software Developer</p>
         </div>
         <div className="contact-info">
