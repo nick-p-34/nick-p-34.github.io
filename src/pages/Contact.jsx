@@ -1,7 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { FaPaperPlane } from "react-icons/fa";
+import emailjs from "emailjs-com";
 import "../style.css";
+
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
 
 const subjects = [
   { value: "", label: "Subject (Please Select)", disabled: true },
@@ -25,6 +30,7 @@ export default function Contact() {
     otherSubject: false,
     message: false,
   });
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const listboxWrapperRef = useRef(null);
   const buttonRef = useRef(null);
@@ -42,11 +48,17 @@ export default function Contact() {
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
+  const clearError = (field) => {
+    setErrors((prev) => ({ ...prev, [field]: false }));
+    setSubmissionStatus(null);
+  };
+
   const handleSubjectChange = (obj) => {
     setSubjectObj(obj);
     if (obj.value !== "Other (Please Specify)") {
       setOtherSubject("");
     }
+    clearError('subject');
   };
 
   const handleChange = (e) => {
@@ -55,14 +67,12 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }));
+    clearError(name);
   };
 
   const handleOtherSubjectChange = (e) => {
     setOtherSubject(e.target.value);
-  };
-
-  const clearError = (field) => {
-    setErrors((prev) => ({ ...prev, [field]: false }));
+    clearError('otherSubject');
   };
 
   const handleSubmit = (e) => {
@@ -88,19 +98,37 @@ export default function Contact() {
         ? otherSubject
         : subjectObj.value;
 
-    console.log("Submitting contact form:", {
-      name: formData.name,
-      email: formData.email,
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
       subject: finalSubject,
       message: formData.message,
-    });
-    alert("Form submitted (check console)");
+    };
+
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+      .then(() => {
+        setSubmissionStatus({ type: 'success', text: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
+        setSubjectObj(subjects[0]);
+        setOtherSubject('');
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        setSubmissionStatus({ type: 'error', text: 'Failed to send message. Please try again later.' });
+      });
   };
 
   return (
     <section className="contact">
       <h2 className="section-title">Contact Me</h2>
-      <p className="subtitle">Non-Functional, placeholder only</p>
+      <p className="subtitle">Reach out and I’ll get back to you soon.</p>
+
+      {submissionStatus && (
+        <p className={`submit-text ${submissionStatus.type === 'error' ? 'error-text' : 'success-text'}`}>
+          {submissionStatus.text}
+        </p>
+      )}
 
       <form className="contact-form" onSubmit={handleSubmit} noValidate>
         <div>
@@ -123,9 +151,7 @@ export default function Contact() {
             type="email"
             name="email"
             placeholder="Email Address"
-            className={`form-input card ${
-              errors.email ? "error-border" : ""
-            }`}
+            className={`form-input card ${errors.email ? "error-border" : ""}`}
             value={formData.email}
             onChange={handleChange}
             onFocus={() => clearError("email")}
@@ -148,7 +174,6 @@ export default function Contact() {
                     ? "var(--secondary-text)"
                     : "var(--text-color)",
               }}
-              onFocus={() => clearError("subject")}
             >
               {subjectObj.label}
             </Listbox.Button>
@@ -162,12 +187,12 @@ export default function Contact() {
                 >
                   {({ active, selected, disabled }) => (
                     <span
-                      className={`
+                      className={``
                         block px-4 py-2
                         ${active ? "bg-secondary-bg" : ""}
                         ${selected ? "font-bold" : ""}
                         ${disabled ? "text-secondary-text cursor-default" : ""}
-                      `}
+                      ``}
                     >
                       {s.label}
                     </span>
