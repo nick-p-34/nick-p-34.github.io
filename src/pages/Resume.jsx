@@ -69,11 +69,11 @@ export default function Resume() {
           <p className="job-title">Intern Software Engineer | Jun 2023 – Jun 2024</p>
           <p className="job-company">Liberty IT, Belfast</p>
           <ul className="resume-list">
-            <li>Developed and documented the Atom Component Library using Angular & TypeScript, creating 30+ reusable UI components to standardise front‑end development.</li>
+            <li>Developed and documented the Atom Component Library using Angular and TypeScript, creating 30+ reusable UI components to standardise front‑end development.</li>
             <li>Refactored and expanded the Jasmine test suite, adding 100+ unit tests and boosting code coverage by ~35%.</li>
-            <li>Configured and optimised CI/CD pipelines in Bamboo, reducing build times by 30%.</li>
-            <li>Collaborated within a 10‑member Agile team, using Jira for sprint planning, daily stand‑ups, reviews, and retrospectives.</li>
-            <li>Provided PI summary and implementation presentations, delivering feature demonstrations to stakeholders each Program Increment.</li>
+            <li>Configured and optimised CI/CD pipelines in Atlassian Bamboo, reducing build times by 30%.</li>
+            <li>Collaborated within a 10‑member Agile team across two‑week sprints, using Jira for sprint planning, daily stand‑ups, reviews, and retrospectives.</li>
+            <li>Provided PI summary and implementation presentations, delivering feature demonstrations to stakeholders and Product Owners each Program Increment.</li>
             <li>Researched and implemented Datadog APM, enabling end‑to‑end application monitoring and faster incident diagnosis.</li>
             <li>Completed a 12‑week professional development course in teamwork, leadership, and communication skills.</li>
           </ul>
@@ -86,7 +86,7 @@ export default function Resume() {
           <p className="edu-degree">BSc in Computer Science (2:1) | Sep 2021 – Jul 2025</p>
           <p className="edu-school">Queen’s University Belfast</p>
           <ul className="resume-list">
-            <li><strong>Final Year Project:</strong> Built a Python application to crawl and analyse financial news using BeautifulSoup, Pandas and Alpha Vantage; researched optimal keyword strategies and integrated time‑series data visualisations.</li>
+            <li><strong>Final Year Project:</strong> Built a Python application to crawl and analyse financial news using BeautifulSoup, Pandas and Alpha Vantage; researched optimal keyword strategies and integrated time‑series data visualiations.</li>
             <li><strong>Software Engineering & Systems Development:</strong> Collaborated in an Agile team of 5 to manage sprints and build a Java-based sustainability simulation; shortlisted as Team Finalists for Engineers Without Borders 2023.</li>
             <li><strong>AI & Machine Learning:</strong> Developed an image‑classification model in R for automated image recognition and categorisation.</li>
             <li><strong>Software Testing:</strong> Designed comprehensive black‑box and white‑box test plans and suites for an existing system.</li>
@@ -118,7 +118,7 @@ export default function Resume() {
             <a href="https://github.com/nick-p-34/Assetto-Campionato" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
           </p>
           <ul className="resume-list">
-            <li>Python/JavaScript FastAPI application that generates custom championship rule files to extend Assetto Corsa’s default mode, adding multiclass points and round-specific rules.</li>
+            <li>Python/JavaScript FastAPI application that generates custom championship rule files to extend Assetto Corsa’s default championship mode, adding multiclass points and round-specific rules.</li>
             <li>Applies rules immediately after each race session, processes session data, and presents updated standings and championship statistics through a responsive web interface.</li>
             <li>Built with a flexible rule‑engine architecture, with future plans to directly overwrite official Assetto Corsa result files to support multi‑class functionality natively.</li>
           </ul>
