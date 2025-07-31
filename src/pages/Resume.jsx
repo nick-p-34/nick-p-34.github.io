@@ -10,7 +10,12 @@ export default function Resume() {
     useEffect(() => {
       const fetchPdf = async () => {
         try {
-          const response = await fetch("../ext_files/NickParke_CV.pdf");
+          const response = await fetch("/NickParke_CV.pdf");
+
+          if (!response.ok) {
+            throw new Error("Failed to fetch the PDF file.");
+          }
+
           let lastModified = response.headers.get("Last-Modified");
           let date;
 
