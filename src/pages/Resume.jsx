@@ -70,6 +70,7 @@ export default function Resume() {
           <p className="job-company">Liberty IT, Belfast</p>
           <ul className="resume-list">
             <li>Developed and documented the Atom Component Library using Angular and TypeScript, creating 30+ reusable UI components to standardise front‑end development.</li>
+            <li>Architected and deployed serverless Product Definition microservices using AWS Lambda, ensuring scalable, low-latency hosting for the components.</li>
             <li>Refactored and expanded the Jasmine test suite, adding 100+ unit tests and boosting code coverage by ~35%.</li>
             <li>Configured and optimised CI/CD pipelines in Atlassian Bamboo, reducing build times by 30%.</li>
             <li>Collaborated within a 10‑member Agile team across two‑week sprints, using Jira for sprint planning, daily stand‑ups, reviews, and retrospectives.</li>
@@ -130,8 +131,8 @@ export default function Resume() {
         <ul className="resume-list">
           <li><strong>Languages:</strong> Python, Java, SQL, JavaScript, TypeScript, HTML5, CSS, R</li>
           <li><strong>Frameworks:</strong> Node.js, NPM, Angular, React, Jasmine, Pandas</li>
-          <li><strong>DevOps:</strong> GitHub/GitLab, Bamboo CI/CD, JIRA, Docker, Kubernetes, Rancher, Datadog</li>
-          <li><strong>Soft:</strong> Agile, Scrum, Team Leadership, Presentation Delivery</li>
+          <li><strong>DevOps:</strong> GitHub/GitLab, Bamboo CI/CD, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog</li>
+          <li><strong>Soft Skills:</strong> Agile, Scrum, Team Leadership, Presentation Delivery</li>
         </ul>
       </div>
 
