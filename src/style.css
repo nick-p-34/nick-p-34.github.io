@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
   --bg-color: rgb(15, 15, 15);
@@ -24,9 +24,8 @@ html, body {
 }
 
 body {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
-  text-spacing: 3px;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -345,10 +344,10 @@ main {
   top: 0; left: 0;
   width: 150px;
   height: 150px;
-  transform: translate(-80%, -10%);
+  transform: translate(-50%, -10%);
 }
 
-.resume-pic-overlay:hover { transform: translate(-80%, -10%) scale(1.2); box-shadow: var(--hover-shadow); }
+.resume-pic-overlay:hover { transform: translate(-50%, -10%) scale(1.2); box-shadow: var(--hover-shadow); }
 
 .intro-container {
   display: flex;

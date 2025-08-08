@@ -65,7 +65,14 @@ export default function Resume() {
 
       <div className="resume-section">
         <h3 className="section-title">Professional Summary</h3>
-        <p>Detail-oriented software engineer with a BSc in Computer Science from Queen’s University Belfast, seeking graduate software development roles. Completed a year-long placement at Liberty IT, building a scalable TypeScript/Angular component library and streamlining CI/CD pipelines. Improved code quality through automated testing and boosted deployment efficiency with Bamboo and GitHub. Strong communicator and proactive team player, experienced in Agile workflows, leading planning sessions, and presenting to stakeholders.</p>
+        <p>
+           Detail-oriented software engineer with a BSc in Computer Science from Queen’s University Belfast,
+           seeking graduate software development roles. Completed a year-long placement at Liberty IT, building a
+           scalable TypeScript component library and streamlining CI/CD pipelines. Improved code quality
+           through automated testing and boosted deployment efficiency with Bamboo and GitHub. Strong
+           communicator and proactive team player, experienced in Agile workflows, leading planning sessions, and
+           presenting to stakeholders.
+         </p>
       </div>
 
       <div className="resume-section">
@@ -134,10 +141,10 @@ export default function Resume() {
       <div className="resume-section">
         <h3 className="section-title">Skills</h3>
         <ul className="resume-list">
-          <li><strong>Languages:</strong> Python, Java, SQL, JavaScript, TypeScript, HTML5, CSS, R</li>
+          <li><strong>Languages:</strong> JavaScript, TypeScript, Python, Java, HTML5, CSS, SQL, R</li>
           <li><strong>Frameworks:</strong> Node.js, NPM, Angular, React, Jasmine, Pandas</li>
-          <li><strong>DevOps:</strong> GitHub/GitLab, Bamboo CI/CD, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog</li>
-          <li><strong>Soft Skills:</strong> Agile, Scrum, Team Leadership, Presentation Delivery</li>
+          <li><strong>DevOps:</strong> GitHub/GitLab, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog</li>
+          <li><strong>Soft Skills:</strong> Agile, Scrum, Teamwork, Team Leadership, Presentation Delivery</li>
         </ul>
       </div>
 
