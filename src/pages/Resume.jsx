@@ -153,7 +153,7 @@ export default function Resume() {
         <h3 className="section-title">Skills</h3>
         <ul className="resume-list">
           <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Java, HTML5, CSS, SQL, R</li>
-          <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, Jasmine, Pandas, FastAPI</li>
+          <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, Maven, Jasmine, Pandas, FastAPI</li>
           <li><strong>DevOps:</strong> GitHub/GitLab, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog</li>
           <li><strong>Soft Skills:</strong> Agile, Scrum, Teamwork, Team Leadership, Presentation Delivery</li>
         </ul>
