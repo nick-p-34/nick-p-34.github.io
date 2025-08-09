@@ -70,7 +70,7 @@ export default function Resume() {
            hands-on experience developing web applications, component libraries and microservices in Agile teams.
            Strong foundations in Java, TypeScript, React, automated testing, CI/CD and cloud-deployed services.
            Experienced in refactoring code, improving test coverage, performing data quality checks and collaborating
-           across multi-disciplinary/global teams to deliver production-grade software.
+           across multi-disciplinary and global teams to deliver production-grade software.
          </p>
       </div>
 
