@@ -56,22 +56,21 @@ export default function Resume() {
           <p className="subtitle">Software Developer</p>
         </div>
         <div className="contact-info">
-          <p>Email: <a href="/contact" target="_self">contact@nickparke.co.uk</a></p>
-          <p>Phone: <a href="tel:+447709105737">(+44) 07709 105737</a></p>
-          <p>Location: Ballyclare, Co. Antrim</p>
-          <p>References: Available on request</p>
+          <p><strong>Email:</strong> <a href="/contact" target="_self">contact@nickparke.co.uk</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+447709105737">(+44) 07709 105737</a></p>
+          <p><strong>Location:</strong> Ballyclare, Co. Antrim</p>
+          <p><strong>References:</strong> Available on request</p>
         </div>
       </div>
 
       <div className="resume-section">
         <h3 className="section-title">Professional Summary</h3>
         <p>
-           Detail-oriented software engineer with a BSc in Computer Science from Queen’s University Belfast,
-           seeking graduate software development roles. Completed a year-long placement at Liberty IT, building a
-           scalable TypeScript component library and streamlining CI/CD pipelines. Improved code quality
-           through automated testing and boosted deployment efficiency with Bamboo and GitHub. Strong
-           communicator and proactive team player, experienced in Agile workflows, leading planning sessions, and
-           presenting to stakeholders.
+           Detail-oriented software engineer with a BSc in Computer Science from Queen’s University Belfast, and
+           hands-on experience developing web applications, component libraries and microservices in Agile teams.
+           Strong foundations in Java, TypeScript, React, automated testing, CI/CD and cloud-deployed services.
+           Experienced in refactoring code, improving test coverage, performing data quality checks and collaborating
+           across multi-disciplinary/global teams to deliver production-grade software.
          </p>
       </div>
 
@@ -81,14 +80,14 @@ export default function Resume() {
           <p className="job-title">Intern Software Engineer | Jun 2023 – Jun 2024</p>
           <p className="job-company">Liberty IT, Belfast</p>
           <ul className="resume-list">
-            <li>Developed and documented the Atom Component Library using Angular and TypeScript, creating 30+ reusable UI components to standardise front‑end development.</li>
-            <li>Architected and deployed serverless Product Definition microservices using AWS Lambda, ensuring scalable, low-latency hosting for the components.</li>
-            <li>Refactored and expanded the Jasmine test suite, adding 100+ unit tests and boosting code coverage by ~35%.</li>
+            <li>Developed and documented a frontend component library using TypeScript & Angular, producing 30+ reusable UI components to standardise front-end delivery and reduce development duplicated work.</li>
+            <li>Refactored and extended the automated Jasmine test suite, adding 100+ unit tests and raising coverage by ~35%, improving release confidence and reducing regression incidents.</li>
+            <li>Performed code reviews and implemented refactoring tasks to improve maintainability and adherence to engineering standards.</li>
+            <li>Architected and deployed serverless Product Definition microservices using AWS Lambda, ensuring a fault-tolerant, low-latency distributed system for component hosting.</li>
             <li>Configured and optimised CI/CD pipelines in Atlassian Bamboo, reducing build times by 30%.</li>
-            <li>Collaborated within a 10‑member Agile team across two‑week sprints, using Jira for sprint planning, daily stand‑ups, reviews, and retrospectives.</li>
-            <li>Provided PI summary and implementation presentations, delivering feature demonstrations to stakeholders and Product Owners each Program Increment.</li>
-            <li>Researched and implemented Datadog APM, enabling end‑to‑end application monitoring and faster incident diagnosis.</li>
-            <li>Completed a 12‑week professional development course in teamwork, leadership, and communication skills.</li>
+            <li>Participated in Agile meetings, such as daily stand-ups, sprint planning and PI summaries, and presented to Product Owners and stakeholders to align delivery with business objectives.</li>
+            <li>Implemented application performance monitoring with Datadog APM to speed up incident diagnosis and feed performance data into engineering improvements.</li>
+            <li>Completed a 12‑week professional development course, strengthening proficiency in teamwork, leadership, networking and problem solving skills.</li>
           </ul>
         </div>
       </div>
@@ -119,9 +118,21 @@ export default function Resume() {
             <a href="https://www.nickparke.co.uk" target="_blank" rel="noopener noreferrer">www.nickparke.co.uk</a>
           </p>
           <ul className="resume-list">
-            <li>Built with React, HTML, CSS, JavaScript and managed via NPM, featuring a Landing page, CV/Resume page, and Contact page with direct links to LinkedIn and GitHub.</li>
-            <li>Fully responsive design with a mobile‑specific navbar that seamlessly switches to a desktop layout, ensuring intuitive navigation across all devices.</li>
-            <li>Custom theming and animations, including a dark/light mode toggle with smooth transitions and animated navbar entries.</li>
+            <li>Built with React, HTML, CSS, and JavaScript, managed via NPM.</li>
+            <li>Multi-page personal portfolio website featuring a landing page, web and downloadable versions of my CV, a Contact page connected to my EmailJS inbox, and links to LinkedIn and GitHub profiles.</li>
+            <li>Focused on responsive web design with distinct mobile-only behaviour and custom desktop styling, and showcasing performance focus through content caching in Cloudflare.</li>
+          </ul>
+        </div>
+
+        <div className="project-item">
+          <p className="project-title">Telemetrix, Racing Leaderboard App</p>
+          <p className="project-link">
+            <a href="https://github.com/nick-p-34/telemetrix" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          </p>
+          <ul className="resume-list">
+            <li>Built with Java, Spring Boot, Kafka and H2 for Oracle SQL.</li>
+            <li>Personal motorsport telemetry pipeline, which ingests data from an external CSV, streaming events through Kafka, and producing a lightweight leaderboard and session summary of the data.</li>
+            <li>Focused on performance through the use of a cached GET layer to retrieve persisted data from the H2 database and serve it in a leaderboard.</li>
           </ul>
         </div>
 
@@ -131,9 +142,9 @@ export default function Resume() {
             <a href="https://github.com/nick-p-34/Assetto-Campionato" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
           </p>
           <ul className="resume-list">
-            <li>Python/JavaScript FastAPI application that generates custom championship rule files to extend Assetto Corsa’s default championship mode, adding multiclass points and round-specific rules.</li>
-            <li>Applies rules immediately after each race session, processes session data, and presents updated standings and championship statistics through a responsive web interface.</li>
-            <li>Built with a flexible rule‑engine architecture, with future plans to directly overwrite official Assetto Corsa result files to support multi‑class functionality natively.</li>
+            <li>Built with Python, FastAPI, HTML and JavaScript.</li>
+            <li>An Assetto Corsa companion app to expand the championship mode through the creation of custom rulesets, applying new data to existing game files.</li>
+            <li>Focused on accessibility and automation, using simple HTML entry fields to build JSON files of new rules, calling FastAPI endpoints to apply new positions and points to the most recently modified results files.</li>
           </ul>
         </div>
       </div>
@@ -141,8 +152,8 @@ export default function Resume() {
       <div className="resume-section">
         <h3 className="section-title">Skills</h3>
         <ul className="resume-list">
-          <li><strong>Languages:</strong> JavaScript, TypeScript, Python, Java, HTML5, CSS, SQL, R</li>
-          <li><strong>Frameworks:</strong> Node.js, NPM, Angular, React, Jasmine, Pandas</li>
+          <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Java, HTML5, CSS, SQL, R</li>
+          <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, Jasmine, Pandas, FastAPI</li>
           <li><strong>DevOps:</strong> GitHub/GitLab, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog</li>
           <li><strong>Soft Skills:</strong> Agile, Scrum, Teamwork, Team Leadership, Presentation Delivery</li>
         </ul>
