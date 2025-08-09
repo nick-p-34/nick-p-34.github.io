@@ -130,7 +130,7 @@ export default function Resume() {
             <a href="https://github.com/nick-p-34/telemetrix" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
           </p>
           <ul className="resume-list">
-            <li>Built with Java, Spring Boot, Kafka and H2 for Oracle SQL.</li>
+            <li>Built with Java, Spring Boot, Kafka and H2 for Oracle SQL, managed via Maven.</li>
             <li>Personal motorsport telemetry pipeline, which ingests data from an external CSV, streaming events through Kafka, and producing a lightweight leaderboard and session summary of the data.</li>
             <li>Focused on performance through the use of a cached GET layer to retrieve persisted data from the H2 database and serve it in a leaderboard.</li>
           </ul>
