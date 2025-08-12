@@ -66,11 +66,20 @@ export default function Resume() {
       <div className="resume-section">
         <h3 className="section-title">Professional Summary</h3>
         <p>
-           Detail-oriented software engineer with a BSc in Computer Science from Queen’s University Belfast, and
-           hands-on experience developing web applications, component libraries and microservices in Agile teams.
-           Strong foundations in Java, TypeScript, React, automated testing, CI/CD and cloud-deployed services.
-           Experienced in refactoring code, improving test coverage, performing data quality checks and collaborating
-           across multi-disciplinary and global teams to deliver production-grade software.
+           I am a dedicated and adaptable software developer with a strong academic foundation, holding a BSc in
+           Computer Science from Queen’s University Belfast, and a proven track record of delivering high-quality,
+           production-ready software. My experience spans frontend and backend development, microservices architecture,
+           automated testing, and cloud-deployed systems, gained through both academic projects and a year-long
+           placement as an Intern Software Engineer at Liberty IT. Skilled in languages such as Java, TypeScript,
+           Python, and SQL, I have built and maintained responsive web applications, reusable component libraries, and
+           distributed systems, applying Agile principles to ensure efficient, collaborative delivery. I am highly
+           proficient in modern frameworks and tools including React, Angular, Spring Boot, Docker, Kubernetes, AWS
+           Lambda, and CI/CD pipelines, and I place a strong emphasis on code quality, maintainability, and performance
+           monitoring. My work is underpinned by a methodical, detail-oriented approach, whether improving test
+           coverage, refactoring legacy code, or diagnosing system issues. Beyond technical expertise, I bring
+           excellent communication skills, leadership experience, and a passion for learning, enabling me to work
+           effectively within multidisciplinary and global teams. I am continually seeking opportunities to combine
+           technical problem-solving with creativity, building solutions that are robust, efficient, and user-focused.
          </p>
       </div>
 
@@ -137,6 +146,18 @@ export default function Resume() {
         </div>
 
         <div className="project-item">
+          <p className="project-title">Telemetrix Sim, Racing Simulation</p>
+          <p className="project-link">
+            <a href="https://github.com/nick-p-34/telemetrix-sim" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          </p>
+          <ul className="resume-list">
+            <li>Built with Python and requests, managed via pip.</li>
+            <li>Mathematical simulation of a race car, using vehicle parameters to simulate realistic telemetry at 20Hz, emitting the results for ingestion by Telemetrix.</li>
+            <li>Focused on real-world accuracy, using regulations to determine vehicle parameters and deriving performance mathematically, and showcasing cross-compatibility by connecting to Telemetrix externally.</li>
+          </ul>
+        </div>
+
+        <div className="project-item">
           <p className="project-title">Assetto Campionato, Racing Companion App</p>
           <p className="project-link">
             <a href="https://github.com/nick-p-34/Assetto-Campionato" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
@@ -153,9 +174,9 @@ export default function Resume() {
         <h3 className="section-title">Skills</h3>
         <ul className="resume-list">
           <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Java, HTML5, CSS, SQL, R</li>
-          <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, Maven, Jasmine, Pandas, FastAPI</li>
+          <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, REST, Maven, Jasmine, Pandas, FastAPI</li>
           <li><strong>DevOps:</strong> GitHub/GitLab, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog</li>
-          <li><strong>Soft Skills:</strong> Agile, Scrum, Teamwork, Team Leadership, Presentation Delivery</li>
+          <li><strong>Soft Skills:</strong> Agile, Scrum, Test Driven Development, Teamwork, Team Leadership, Presentation Delivery</li>
         </ul>
       </div>
 
