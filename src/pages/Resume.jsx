@@ -134,7 +134,7 @@ export default function Resume() {
         </div>
 
         <div className="project-item">
-          <p className="project-title">Telemetrix, Racing Leaderboard App</p>
+          <p className="project-title">Telemetrix, Telemetry Streaming System</p>
           <p className="project-link">
             <a href="https://github.com/nick-p-34/telemetrix" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
           </p>
