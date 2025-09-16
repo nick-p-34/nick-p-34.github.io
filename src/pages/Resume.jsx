@@ -114,6 +114,7 @@ export default function Resume() {
             <li><strong>Cloud Computing:</strong> Implemented and deployed six microservices in different languages on a Kubernetes cluster, integrating them with a provided web front end.</li>
             <li><strong>Web Technologies:</strong> Created interactive and responsive web applications in a five‑person Agile team.</li>
             <li><strong>Database Systems:</strong> Designed database schemas using mySQL to query large-scale existing systems, and build new systems with provided datasets.</li>
+            <li><strong>Fundamentals of Maths:</strong> Applied mathematical skills and reasoning to design, build and debug complex algorithms.</li>
           </ul>
         </div>
       </div>
@@ -152,7 +153,7 @@ export default function Resume() {
           </p>
           <ul className="resume-list">
             <li>Built with Python and requests, managed via pip.</li>
-            <li>Mathematical simulation of a race car, using vehicle parameters to simulate realistic telemetry at 20Hz, emitting the results for ingestion by Telemetrix.</li>
+            <li>Mathematical simulation of a race car, using vehicle parameters to simulate realistic telemetry at 20Hz, emitting the results for ingestion by external streaming pipelines.</li>
             <li>Focused on real-world accuracy, using regulations to determine vehicle parameters and deriving performance mathematically, and showcasing cross-compatibility by connecting to Telemetrix externally.</li>
           </ul>
         </div>
@@ -176,7 +177,7 @@ export default function Resume() {
           <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Java, HTML5, CSS, SQL, R</li>
           <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, REST, Maven, Jasmine, Pandas, FastAPI</li>
           <li><strong>DevOps & Tools:</strong> GitHub/GitLab, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog, Office 365</li>
-          <li><strong>Soft Skills:</strong> Agile, Scrum, Test Driven Development, Teamwork, Team Leadership, Stakeholder Engagement, Presentation Delivery, Innovation</li>
+          <li><strong>Soft Skills:</strong> Agile, Scrum, Collaboration, Teamwork, Team Leadership, Stakeholder Engagement, Presentation Delivery, Innovation, Test Driven Development</li>
         </ul>
       </div>
 
