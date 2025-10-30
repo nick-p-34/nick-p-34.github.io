@@ -93,7 +93,7 @@ export default function Resume() {
             <li>Refactored and extended the automated Jasmine test suite, adding 100+ unit tests and raising coverage by ~35%, improving release confidence and reducing regression incidents.</li>
             <li>Performed code reviews and implemented refactoring tasks to improve maintainability and adherence to engineering standards.</li>
             <li>Architected and deployed serverless Product Definition microservices using AWS Lambda, ensuring a fault-tolerant, low-latency distributed system for component hosting.</li>
-            <li>Configured and optimised CI/CD pipelines in Atlassian Bamboo, reducing build times by 30%.</li>
+            <li>Configured and optimised CI/CD pipelines in Atlassian Bamboo, reducing build times by 30%, and automating test suites to emphasise robust solutions</li>
             <li>Participated in Agile meetings, such as daily stand-ups, sprint planning and PI summaries, and presented to Product Owners and stakeholders to align delivery with business objectives.</li>
             <li>Implemented application performance monitoring with Datadog APM to speed up incident diagnosis and feed performance data into engineering improvements.</li>
             <li>Completed a 12‑week professional development course, strengthening proficiency in teamwork, leadership, networking and problem solving skills.</li>
@@ -109,9 +109,9 @@ export default function Resume() {
           <ul className="resume-list">
             <li><strong>Final Year Project:</strong> Built a Python application to crawl and analyse financial news using BeautifulSoup, Pandas and Alpha Vantage; researched optimal keyword strategies and integrated time‑series data visualiations.</li>
             <li><strong>Software Engineering & Systems Development:</strong> Collaborated in an Agile team of 5 to manage sprints and build a Java-based sustainability simulation; shortlisted as Team Finalists for Engineers Without Borders 2023.</li>
+            <li><strong>Cloud Computing:</strong> Implemented and deployed six microservices in different languages on a Kubernetes cluster, integrating them with a provided web front end.</li>
             <li><strong>AI & Machine Learning:</strong> Developed an image‑classification model in R for automated image recognition and categorisation.</li>
             <li><strong>Software Testing:</strong> Designed comprehensive black‑box and white‑box test plans and suites for an existing system.</li>
-            <li><strong>Cloud Computing:</strong> Implemented and deployed six microservices in different languages on a Kubernetes cluster, integrating them with a provided web front end.</li>
             <li><strong>Web Technologies:</strong> Created interactive and responsive web applications in a five‑person Agile team.</li>
             <li><strong>Database Systems:</strong> Designed database schemas using mySQL to query large-scale existing systems, and build new systems with provided datasets.</li>
             <li><strong>Fundamentals of Maths:</strong> Applied mathematical skills and reasoning to design, build and debug complex algorithms.</li>
@@ -159,6 +159,18 @@ export default function Resume() {
         </div>
 
         <div className="project-item">
+          <p className="project-title">Mini Parcel FastAPI</p>
+          <p className="project-link">
+            <a href="https://github.com/nick-p-34/mini-parcel-api" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          </p>
+          <ul className="resume-list">
+            <li>Built with C# and .NET</li>
+            <li>Small personal development project to learn and experiment with C#, takes user inputs for parcel details, and uses them to calculate a shipping cost.</li>
+            <li>Focused on learning and simplicity, using simple CLI interactivity and basic mathematical logic to gain exposure to the basics of #C.</li>
+          </ul>
+        </div>
+
+        <div className="project-item">
           <p className="project-title">Assetto Campionato, Racing Companion App</p>
           <p className="project-link">
             <a href="https://github.com/nick-p-34/Assetto-Campionato" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
@@ -174,10 +186,10 @@ export default function Resume() {
       <div className="resume-section">
         <h3 className="section-title">Skills</h3>
         <ul className="resume-list">
-          <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Java, HTML5, CSS, SQL, R</li>
-          <li><strong>Frameworks:</strong> React, Angular, Kafka, Spring Boot, Node.js, NPM, REST, Maven, Jasmine, Pandas, FastAPI</li>
-          <li><strong>DevOps & Tools:</strong> GitHub/GitLab, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog, Office 365</li>
-          <li><strong>Soft Skills:</strong> Agile, Scrum, Collaboration, Teamwork, Team Leadership, Stakeholder Engagement, Presentation Delivery, Innovation, Test Driven Development</li>
+          <li><strong>Languages:</strong> TypeScript, JavaScript, Python, Java, HTML5, CSS, SQL, R, C#</li>
+          <li><strong>Frameworks:</strong> REST APIs, React, Angular, Spring Boot, Kafka, Node.js, NPM, Maven, Jasmine, Pandas, FastAPI</li>
+          <li><strong>DevOps & Tools:</strong> GitHub/GitLab, CI/CD, Atlassian Bamboo, JIRA, Docker, Kubernetes, AWS Lambda, Rancher, Datadog, Office 365</li>
+          <li><strong>Soft Skills:</strong> Agile, Scrum, Collaboration, Teamwork, Team Leadership, Stakeholder Engagement, Presentation Delivery, Innovation, Incident Response</li>
         </ul>
       </div>
 
