@@ -26,6 +26,7 @@ export default function Home() {
               <FaLinkedin className="social-icon" size={32} />
               <span>LinkedIn</span>
             </a>
+
             <a
               href="https://github.com/nick-p-34"
               target="_blank"

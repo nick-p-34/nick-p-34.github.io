@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
@@ -8,6 +8,7 @@ import "./style.css";
 const Home = lazy(() => import("./pages/Home"));
 const Resume = lazy(() => import("./pages/Resume"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Placeholder = lazy(() => import("./pages/Placeholder"));
 
 export default function App() {
   const [theme, setTheme] = useState("dark");
@@ -48,6 +49,8 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/404" element={<Placeholder />} />
+                <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </Suspense>
           </main>
