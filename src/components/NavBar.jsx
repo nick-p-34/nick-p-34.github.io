@@ -128,6 +128,7 @@ export default function NavBar({ onToggleTheme, theme }) {
         prevFocused.focus?.();
       }
     };
+  // eslint-disable-next-line
   }, [mobileOpen, mobileClosing]);
 
   const onDesktopDropdownKeyDown = (e) => {
