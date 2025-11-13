@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FaDownload } from "react-icons/fa";
 import pfpPng from "../ext_files/pfp.png";
 import pfpWeb from "../ext_files/pfp.webp";

@@ -27,6 +27,9 @@ export default function App() {
 
       cursorEl.classList.toggle("hover", !!interactive);
     };
+
+    document.addEventListener("mousemove", handler);
+    return () => document.removeEventListener("mousemove", handler);
   }, []);
 
   const toggleTheme = () => {

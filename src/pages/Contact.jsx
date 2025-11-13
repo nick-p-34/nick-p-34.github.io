@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { FaPaperPlane } from "react-icons/fa";
-import emailjs from "emailjs-com";
 import "../style.css";
 
 const SERVICE_ID = "service_307qxm5";
