@@ -75,7 +75,7 @@ export default function Contact() {
     clearError('otherSubject');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {
@@ -105,18 +105,20 @@ export default function Contact() {
       message: formData.message,
     };
 
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
-      .then(() => {
-        setSubmissionStatus({ type: 'success', text: 'Message sent successfully!' });
-        setFormData({ name: '', email: '', message: '' });
-        setSubjectObj(subjects[0]);
-        setOtherSubject('');
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        setSubmissionStatus({ type: 'error', text: 'Failed to send message. Please try again later.' });
-      });
+    try {
+      const mod = await import('emailjs-com');
+      const emailjsLib = mod.default || mod;
+
+      await emailjsLib.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID);
+
+      setSubmissionStatus({ type: 'success', text: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', message: '' });
+      setSubjectObj(subjects[0]);
+      setOtherSubject('');
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmissionStatus({ type: 'error', text: 'Failed to send message. Please try again later.' });
+    }
   };
 
   return (

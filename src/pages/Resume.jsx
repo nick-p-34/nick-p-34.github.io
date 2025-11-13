@@ -1,60 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { FaDownload } from "react-icons/fa";
-import pfp from "../ext_files/pfp.png";
+import pfpPng from "../ext_files/pfp.png";
+import pfpWeb from "../ext_files/pfp.webp";
 import "../style.css";
 
 export default function Resume() {
-  const [cvBlobUrl, setCvBlobUrl] = useState(null);
-    const [fileName, setFileName] = useState("NickParke_CV.pdf");
-
-    useEffect(() => {
-      const fetchPdf = async () => {
-        try {
-          const response = await fetch("/NickParke_CV.pdf");
-
-          if (!response.ok) {
-            throw new Error("Failed to fetch the PDF file.");
-          }
-
-          let lastModified = response.headers.get("Last-Modified");
-          let date;
-
-          if (lastModified) {
-            date = new Date(lastModified);
-          }
-
-          else {
-            date = new Date();
-          }
-
-          const month = date.toLocaleString("default", { month: "short" });
-          const year = date.getFullYear();
-          const formattedName = `NickParke_CV_${month}${year}.pdf`;
-
-          const blob = await response.blob();
-          const file = new File([blob], formattedName, { type: blob.type });
-
-          const url = URL.createObjectURL(file);
-          setCvBlobUrl(url);
-          setFileName(formattedName);
-        }
-
-        catch (err) {
-          console.error("Failed to load CV file:", err);
-        }
-      };
-
-      fetchPdf();
-    }, []);
-
   return (
     <section className="resume">
       <div className="resume-header">
-        <img src={pfp} alt="Profile" className="resume-pic-overlay" />
+          <picture>
+            <source srcSet={pfpWeb} type="image/webp" />
+            <img src={pfpPng} alt="Profile" className="resume-pic-overlay" loading="lazy" />
+          </picture>
+
         <div className="header-left">
           <h2 className="section-title">Nick Parke</h2>
           <p className="subtitle">Software Developer</p>
         </div>
+
         <div className="contact-info">
           <p><strong>Email:</strong> <a href="/contact" target="_self">contact@nickparke.co.uk</a></p>
           <p><strong>Phone:</strong> <a href="tel:+447709105737">(+44) 07709 105737</a></p>
@@ -230,36 +193,34 @@ export default function Resume() {
       </div>
 
       <div className="resume-section">
-              <h3 className="section-title">Hobbies & Interests</h3>
+        <h3 className="section-title">Hobbies & Interests</h3>
 
-              <div className="hobby-item">
-                <p className="hobby-title">Programming</p>
-                <ul className="resume-list">
-                  <li>I enjoy building apps and programmes to help keep on top of my coding skills, and to learn new technologies. I like to integrate my other interests into these apps, so I know they have real-world applications.</li>
-                </ul>
-              </div>
+        <div className="hobby-item">
+          <p className="hobby-title">Programming</p>
+          <ul className="resume-list">
+            <li>I enjoy building apps and programmes to help keep on top of my coding skills, and to learn new technologies. I like to integrate my other interests into these apps, so I know they have real-world applications.</li>
+          </ul>
+        </div>
 
-              <div className="hobby-item">
-                <p className="hobby-title">Travel</p>
-                <ul className="resume-list">
-                  <li>I love to travel, visit new places and experience new cultures. I also enjoy learning languages so I can get around more easily when I travel, and am currently learning Italian.</li>
-                </ul>
-              </div>
+        <div className="hobby-item">
+          <p className="hobby-title">Travel</p>
+          <ul className="resume-list">
+            <li>I love to travel, visit new places and experience new cultures. I also enjoy learning languages so I can get around more easily when I travel, and am currently learning Italian.</li>
+          </ul>
+        </div>
 
-              <div className="hobby-item">
-                <p className="hobby-title">Racing</p>
-                <ul className="resume-list">
-                  <li>I have a great interest in motorsports of all kinds, and am aiming to compete in the near future. I also like reading up on the technical side of racing to improve my engineering and practical skills.</li>
-                </ul>
-              </div>
-            </div>
+        <div className="hobby-item">
+          <p className="hobby-title">Racing</p>
+          <ul className="resume-list">
+            <li>I have a great interest in motorsports of all kinds, and am aiming to compete in the near future. I also like reading up on the technical side of racing to improve my engineering and practical skills.</li>
+          </ul>
+        </div>
+      </div>
 
-      {cvBlobUrl && (
-        <a href={cvBlobUrl} download={fileName} className="social-button">
-          <FaDownload className="social-icon" size={20} />
-          <span>Download CV</span>
-        </a>
-      )}
+      <a href="/NickParke_CV.pdf" download="NickParke_CV.pdf" className="social-button" aria-label="Download CV">
+        <FaDownload className="social-icon" size={20} />
+        <span>Download CV</span>
+      </a>
     </section>
   );
 }

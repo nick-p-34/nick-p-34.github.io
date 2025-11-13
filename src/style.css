@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 :root {
   --bg-color: rgb(15, 15, 15);
   --text-color: rgb(255, 255, 255);
@@ -31,19 +29,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body, * {
-  cursor: none !important;
-}
-
-a,
-button,
-[role="button"],
-.social-button,
-.dropdown-label,
-.profile-pic,
-.resume-pic-overlay {
-  cursor: pointer;
-}
+.custom-cursor-enabled * { cursor: none !important; }
 
 .hide {
   opacity: 0;
@@ -61,36 +47,61 @@ button,
 }
 
 @keyframes pulse {
-  0%   { transform: translate(-50%, -50%) scale(1); opacity: 1; }  50%  { transform: translate(-50%, -50%) scale(0.6); opacity: 0.7; }  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }}@keyframes spin {
-  0%   { transform: translate(-50%, -50%) rotate(0deg) scale(1); }  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }}@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }  to   { opacity: 1; transform: translateY(0); }}@keyframes slideUp {
-  from { opacity: 1; transform: translateY(0); }  to   { opacity: 0; transform: translateY(-20px); }}@keyframes expandFade {
-  from { opacity: 0; transform: scaleY(0); transform-origin: top; }  to   { opacity: 1; transform: scaleY(1); }}@keyframes collapseFade {
-  from { opacity: 1; transform: scaleY(1); transform-origin: top; }  to   { opacity: 0; transform: scaleY(0); transform-origin: top; }}
+  0%   { transform: translate3d(var(--cx), var(--cy), 0) translate(-50%, -50%) scale(1); opacity:1; }
+  40%  { transform: translate3d(var(--cx), var(--cy), 0) translate(-50%, -50%) scale(0.7); opacity:0.9; }
+  100% { transform: translate3d(var(--cx), var(--cy), 0) translate(-50%, -50%) scale(1); opacity:1; }
+}
+
+@keyframes spin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 1; transform: translateY(0); }  to { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes expandFade {
+  from { opacity: 0; transform: scaleY(0); transform-origin: top; }  to { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes collapseFade {
+  from { opacity: 1; transform: scaleY(1); transform-origin: top; }  to { opacity: 0; transform: scaleY(0); transform-origin: top; }
+}
 
 .custom-cursor {
   position: fixed;
-  left: 0; top: 0;
-  width: 16px; height: 16px;
+  left: 0;
+  top: 0;
+  --cx: 0px;
+  --cy: 0px;
+  --cursor-scale: 1;
+  width: 16px;
+  height: 16px;
   background-color: var(--accent-color);
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate3d(var(--cx), var(--cy), 0) translate(-50%, -50%) scale(var(--cursor-scale));
   transition: background-color 0.3s ease;
   z-index: 9999;
 }
 
 .custom-cursor.hover {
   background-color: var(--text-color);
-  transform: translate(-50%, -50%) scale(1.3);
+  --cursor-scale: 1.3;
 }
 
-.custom-cursor.click { animation: pulse 0.3s ease-out; }
+.custom-cursor.click { animation: pulse 0.3s ease-out forwards; }
 
 .custom-cursor.loading { animation: spin 1s linear infinite; }
 
 .custom-cursor.text-hover {
-  width: 2px; height: 20px;
+  width: 2px;
+  height: 20px;
   border: 2px solid var(--accent-color);
   border-radius: 8px;
 }
@@ -359,7 +370,7 @@ main {
 
 .intro-text { max-width: 600px; }
 
-intro-text h2 { margin-bottom: 0.5rem; }
+.intro-text h2 { margin-bottom: 0.5rem; }
 
 .intro-text p {
   margin-top: 0;
@@ -579,14 +590,6 @@ textarea {
   font-family: inherit;
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.contact-form .social-button:hover {
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-  transform: scale(1.1);
-  border-color: var(--accent-color);
-  box-shadow: var(--hover-shadow);
 }
 
 .contact-form .social-button:hover {

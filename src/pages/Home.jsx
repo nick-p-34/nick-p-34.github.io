@@ -1,13 +1,18 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import pfp from "../ext_files/pfp.png";
+import pfpPng from "../ext_files/pfp.png";
+import pfpWeb from "../ext_files/pfp.webp";
 import "../style.css";
 
 export default function Home() {
   return (
     <section className="home">
       <div className="intro-container">
-        <img src={pfp} alt="Profile" className="profile-pic" />
+        <picture>
+          <source srcSet={pfpWeb} type="image/webp" />
+          <img src={pfpPng} alt="Profile" className="profile-pic" loading="lazy" />
+        </picture>
+
         <div className="intro-text">
           <h2 className="section-title">Nick Parke</h2>
           <p>Software Developer and Motorsport Enthusiast</p>

@@ -10,24 +10,61 @@ export default function CustomCursor() {
     const mq = window.matchMedia('(pointer: coarse)');
     setIsTouchDevice(mq.matches);
 
-    const handler = e => setIsTouchDevice(e.matches);
-    mq.addEventListener('change', handler);
+    const mqHandler = (e) => setIsTouchDevice(e.matches);
+
+    if (typeof mq.addEventListener === 'function') {
+      mq.addEventListener('change', mqHandler);
+    } else if (typeof mq.addListener === 'function') {
+      mq.addListener(mqHandler);
+    }
 
     const cursor = cursorRef.current;
-    if (!cursor || isTouchDevice) return;
 
-    const handleMove = e => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
+    if (!cursor || mq.matches) {
+      document.documentElement.classList.remove('custom-cursor-enabled');
+      return () => {
+        if (typeof mq.removeEventListener === 'function') {
+          mq.removeEventListener('change', mqHandler);
+        } else if (typeof mq.removeListener === 'function') {
+          mq.removeListener(mqHandler);
+        }
+      };
+    }
+
+    document.documentElement.classList.add('custom-cursor-enabled');
+
+    let rafId = null;
+    let x = 0, y = 0;
+
+    const handleMove = (e) => {
+      x = e.clientX;
+      y = e.clientY;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          cursor.style.setProperty('--cx', `${x}px`);
+          cursor.style.setProperty('--cy', `${y}px`);
+          rafId = null;
+        });
+      }
     };
 
-    const handleDown = () => cursor.classList.add('click');
-    const handleUp = () => cursor.classList.remove('click');
+    const handleDown = (e) => {
+      cursor.classList.add('click');
+      cursor.style.setProperty('--cx', `${x}px`);
+      cursor.style.setProperty('--cy', `${y}px`);
+    };
+
+    const handleUp = (e) => {
+      cursor.classList.remove('click');
+      cursor.style.setProperty('--cx', `${x}px`);
+      cursor.style.setProperty('--cy', `${y}px`);
+    };
 
     const handleLoadStart = () => setLoading(true);
     const handleLoadEnd = () => setLoading(false);
 
-    const handleHover = e => {
+    const handleHover = (e) => {
       const interactive = e.target.closest(
         'a, button, [role="button"], .social-button, .dropdown-label, .profile-pic, .resume-pic-overlay'
       );
@@ -39,7 +76,7 @@ export default function CustomCursor() {
       cursor.classList.toggle('text-hover', !!textField && !interactive);
     };
 
-    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mousemove', handleMove, { passive: true });
     document.addEventListener('mousedown', handleDown);
     document.addEventListener('mouseup', handleUp);
     document.addEventListener('mouseover', handleHover);
@@ -48,6 +85,7 @@ export default function CustomCursor() {
     window.addEventListener('load', handleLoadEnd);
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       document.removeEventListener('mousemove', handleMove);
       document.removeEventListener('mousedown', handleDown);
       document.removeEventListener('mouseup', handleUp);
@@ -55,9 +93,16 @@ export default function CustomCursor() {
       document.removeEventListener('mouseout', handleHover);
       window.removeEventListener('beforeunload', handleLoadStart);
       window.removeEventListener('load', handleLoadEnd);
-      mq.removeEventListener('change', handler);
+
+      if (typeof mq.removeEventListener === 'function') {
+        mq.removeEventListener('change', mqHandler);
+      } else if (typeof mq.removeListener === 'function') {
+        mq.removeListener(mqHandler);
+      }
+
+      document.documentElement.classList.remove('custom-cursor-enabled');
     };
-  }, [isTouchDevice]);
+  }, []);
 
   if (isTouchDevice) return null;
 
