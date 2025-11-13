@@ -245,7 +245,7 @@ export default function Contact() {
         </div>
 
         <button type="submit" className="social-button">
-          <FaPaperPlane className="social-icon" size={32} />
+          <FaPaperPlane className="social-icon" size={32} aria-hidden="true" />
           <span>Send Message</span>
         </button>
       </form>

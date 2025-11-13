@@ -146,6 +146,11 @@ main {
   transition: color 0.3s ease;
 }
 
+.nav-links button {
+  background: transparent;
+  border: none;
+}
+
 .nav-links a:hover { color: var(--accent-color); }
 
 .dropdown {

@@ -8,11 +8,14 @@ export default function Footer({ onToggleTheme, theme }) {
       <p className="footer-text">
         &copy; {new Date().getFullYear()} Nick Parke. All Rights Reserved
       </p>
+
       <button
         className="theme-toggle desktop-only"
         onClick={onToggleTheme}
+        aria-pressed={theme === "dark"}
+        aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
       >
-        {theme === "dark" ? <FaMoon /> : <FaSun />}
+        {theme === "dark" ? <FaMoon aria-hidden="true" /> : <FaSun aria-hidden="true" />}
       </button>
     </footer>
   );

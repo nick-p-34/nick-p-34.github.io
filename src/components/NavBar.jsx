@@ -9,6 +9,10 @@ export default function NavBar({ onToggleTheme, theme }) {
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
 
+  const hamburgerRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+  const closeButtonRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -75,29 +79,116 @@ export default function NavBar({ onToggleTheme, theme }) {
     }
   };
 
+  useEffect(() => {
+    let prevFocused = null;
+
+    function keyHandler(e) {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        handleMobileToggle();
+      }
+
+      if (e.key === "Tab" && (mobileOpen || mobileClosing)) {
+        const container = mobileMenuRef.current;
+
+        if (!container) return;
+        const focusable = Array.from(
+          container.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => el.offsetParent !== null);
+
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+
+        else if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      }
+    }
+
+    if (mobileOpen) {
+      prevFocused = document.activeElement;
+      setTimeout(() => closeButtonRef.current?.focus?.(), 0);
+      document.addEventListener("keydown", keyHandler);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", keyHandler);
+
+      if (!mobileOpen && !mobileClosing && prevFocused) {
+        prevFocused.focus?.();
+      }
+    };
+  }, [mobileOpen, mobileClosing]);
+
+  const onDesktopDropdownKeyDown = (e) => {
+    const key = e.key;
+
+    if (key === "Enter" || key === " ") {
+      e.preventDefault();
+      clearTimeout(timeoutRef.current);
+      setOpen((v) => !v);
+    }
+
+    else if (key === "ArrowDown") {
+      e.preventDefault();
+      clearTimeout(timeoutRef.current);
+      setOpen(true);
+
+      setTimeout(() => {
+        const firstLink = dropdownRef.current?.querySelector("ul.dropdown-menu a");
+        firstLink?.focus?.();
+      }, 0);
+    }
+  };
+
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Primary navigation">
         <ul className="nav-links desktop-only">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/resume">Resume</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+
           <li
             className="dropdown"
             ref={dropdownRef}
             onMouseEnter={() => { clearTimeout(timeoutRef.current); setOpen(true); }}
             onMouseLeave={() => { timeoutRef.current = setTimeout(() => setOpen(false), 150); }}
           >
-            <span className="dropdown-label icon-transition">
-              More Sites {open ? <IoIosArrowDown size={16} /> : <IoIosArrowForward size={16} />}
-            </span>
+            <button
+              className="dropdown-label icon-transition"
+              aria-expanded={open}
+              aria-controls="desktop-more-sites-list"
+              aria-haspopup="true"
+              onKeyDown={onDesktopDropdownKeyDown}
+              onClick={() => { clearTimeout(timeoutRef.current); setOpen((v) => !v); }}
+            >
+              <span>More Sites</span>
+              {open ? <IoIosArrowDown size={16} aria-hidden="true" /> : <IoIosArrowForward size={16} aria-hidden="true" />}
+            </button>
+
             {open && (
-              <ul className="dropdown-menu animated-dropdown">
-                <li><a href="/404">TBD 1</a></li>
-                <li><a href="/404">TBD 2</a></li>
+              <ul
+                id="desktop-more-sites-list"
+                className="dropdown-menu animated-dropdown"
+                role="menu"
+              >
+                <li><a role="menuitem" href="/404">TBD 1</a></li>
+                <li><a role="menuitem" href="/404">TBD 2</a></li>
               </ul>
             )}
           </li>
+
           <li>
             <a href="https://github.com/nick-p-34" target="_blank" rel="noopener noreferrer">
               GitHub
@@ -111,23 +202,32 @@ export default function NavBar({ onToggleTheme, theme }) {
         </ul>
 
         <button
+          ref={hamburgerRef}
           className={`hamburger mobile-only icon-transition ${mobileOpen || mobileClosing ? 'hide' : 'show'}`}
           onClick={handleMobileToggle}
+          aria-expanded={mobileOpen || mobileClosing}
+          aria-controls="mobile-nav"
+          aria-label={mobileOpen || mobileClosing ? "Close navigation menu" : "Open navigation menu"}
         >
-          <FaBars size={24} />
+          <FaBars size={24} aria-hidden="true" />
         </button>
       </nav>
 
       {(mobileOpen || mobileClosing) && (
         <div
+          id="mobile-nav"
+          ref={mobileMenuRef}
           className={`mobile-menu ${mobileClosing ? 'animated-menu-close' : 'animated-menu'}`}
           onAnimationEnd={handleMenuAnimationEnd}
+          aria-hidden={!(mobileOpen || mobileClosing)}
         >
           <button
+            ref={closeButtonRef}
             className="close-button icon-transition"
             onClick={handleMobileToggle}
+            aria-label="Close navigation menu"
           >
-            <FaTimes size={24} />
+            <FaTimes size={24} aria-hidden="true" />
           </button>
 
           <ul className="mobile-links">
@@ -138,14 +238,20 @@ export default function NavBar({ onToggleTheme, theme }) {
               <button
                 className="mobile-dropdown-label icon-transition"
                 onClick={handleMobileDropdown}
+                aria-expanded={mobileDropdownOpen}
+                aria-controls="more-sites-list"
+                aria-haspopup="true"
               >
-                More Sites {mobileDropdownOpen
-                  ? <IoIosArrowDown size={16} />
-                  : <IoIosArrowForward size={16} />
+                <span>More Sites</span>{" "}
+                {mobileDropdownOpen
+                  ? <IoIosArrowDown size={16} aria-hidden="true" />
+                  : <IoIosArrowForward size={16} aria-hidden="true" />
                 }
               </button>
+
               {(mobileDropdownOpen || mobileDropdownClosing) && (
                 <ul
+                  id="more-sites-list"
                   className={`mobile-inline-dropdown ${
                     mobileDropdownClosing ? 'animated-dropdown-close' : 'animated-dropdown'
                   }`}
@@ -168,8 +274,13 @@ export default function NavBar({ onToggleTheme, theme }) {
             </li>
           </ul>
 
-          <button className="mobile-theme icon-transition" onClick={onToggleTheme}>
-            {theme === "dark" ? <FaMoon size={20} /> : <FaSun size={20} />}
+          <button
+            className="mobile-theme icon-transition"
+            onClick={onToggleTheme}
+            aria-pressed={theme === "dark"}
+            aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+          >
+            {theme === "dark" ? <FaMoon size={20} aria-hidden="true" /> : <FaSun size={20} aria-hidden="true" />}
           </button>
 
           <p className="mobile-copyright">
