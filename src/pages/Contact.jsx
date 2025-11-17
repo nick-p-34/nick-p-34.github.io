@@ -3,9 +3,9 @@ import { Listbox } from "@headlessui/react";
 import { FaPaperPlane } from "react-icons/fa";
 import "../style.css";
 
-const SERVICE_ID = "service_307qxm5";
-const TEMPLATE_ID = "template_tx2j09c";
-const USER_ID = "8KVYC4vO5x2uVwS1I";
+const SERVICE_ID = process.env.SERVICE_ID;
+const TEMPLATE_ID = process.env.TEMPLATE_ID;
+const USER_ID = process.env.USER_ID;
 
 const subjects = [
   { value: "", label: "Subject (Please Select)", disabled: true },
