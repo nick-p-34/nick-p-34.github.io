@@ -114,7 +114,9 @@ export default function Contact() {
       setFormData({ name: '', email: '', message: '' });
       setSubjectObj(subjects[0]);
       setOtherSubject('');
-    } catch (error) {
+    }
+
+    catch (error) {
       console.error('EmailJS error:', error);
       setSubmissionStatus({ type: 'error', text: 'Failed to send message. Please try again later.' });
     }

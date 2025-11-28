@@ -122,7 +122,7 @@ export default function Resume() {
         </div>
 
         <div className="project-item">
-          <p className="project-title">Mini Parcel FastAPI</p>
+          <p className="project-title">Mini Parcel API, CLI App</p>
           <p className="project-link">
             <a href="https://github.com/nick-p-34/mini-parcel-api" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
           </p>
