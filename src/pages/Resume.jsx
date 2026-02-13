@@ -29,25 +29,25 @@ export default function Resume() {
       <div className="resume-section">
         <h3 className="section-title">Professional Summary</h3>
         <p>
-           I am a dedicated and adaptable software developer with a strong academic foundation, holding a BSc in
-           Computer Science from Queen’s University Belfast, and a proven track record of delivering high-quality,
-           production-ready software. My experience spans frontend and backend development, microservices architecture,
-           automated testing, and cloud-deployed systems, gained through both academic projects and a year-long
-           placement as an Intern Software Engineer at Liberty IT. Skilled in languages such as Java, TypeScript,
-           Python, and SQL, I have built and maintained responsive web applications, reusable component libraries, and
-           distributed systems, applying Agile principles to ensure efficient, collaborative delivery. I am highly
-           proficient in modern frameworks and tools including React, Angular, Spring Boot, Docker, Kubernetes, AWS
-           Lambda, and CI/CD pipelines, and I place a strong emphasis on code quality, maintainability, and performance
-           monitoring. My work is underpinned by a methodical, detail-oriented approach, whether improving test
-           coverage, refactoring legacy code, or diagnosing system issues. Beyond technical expertise, I bring
-           excellent communication skills, leadership experience, and a passion for learning, enabling me to work
-           effectively within multidisciplinary and global teams. I am continually seeking opportunities to combine
-           technical problem-solving with creativity, building solutions that are robust, efficient, and user-focused.
+           Dedicated and adaptable Software Engineer with a BSc in Computer Science from Queen’s University Belfast and experience delivering production-ready systems across frontend and backend domains. Currently a Trainee Software Engineer at Kainos, undertaking an intensive 8-week AI-first engineering academy, leveraging AI powered tools to accelerate delivery and learning. Experienced in building responsive web applications, microservices, and cloud-deployed solutions using TypeScript, Python, Java, SQL, and modern frameworks. Strong grounding in automated testing, CI/CD, and Agile delivery, with a focus on clean, maintainable code. Comfortable and experienced collaborating in cross-functional teams to deliver end-to-end projects, leveraging AI-assisted development tools and modern engineering practices. Committed to continuous learning and building robust, user-focused software solutions.
          </p>
       </div>
 
       <div className="resume-section">
         <h3 className="section-title">Professional Experience</h3>
+
+        <div className="experience-item">
+          <p className="job-title">Software Engineer (T) | Feb 2026 – Present</p>
+          <p className="job-company">Kainos, Belfast</p>
+          <ul className="resume-list">
+            <li>Leveraged AI-assisted development tools to accelerate delivery, improve code quality, and support problem-solving across tasks.</li>
+            <li>Completed an intensive 8-week training academy focused on modern full-stack engineering practices in a fast-paced, project-led environment.</li>
+            <li>Collaborated in small agile teams to design and build a three-tier job application system (database, API, and UI layers).</li>
+            <li>Developed backend services using Express and TypeScript, implemented data access with Prisma, and integrated front-end components using Axios and Bootstrap.</li>
+            <li>Contributed to a GitHub Actions CI pipeline with automated testing, code quality checks, and build validation, and incorporated accessibility testing using Pa11y.</li>
+          </ul>
+        </div>
+
         <div className="experience-item">
           <p className="job-title">Intern Software Engineer | Jun 2023 – Jun 2024</p>
           <p className="job-company">Liberty IT, Belfast</p>
