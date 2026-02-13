@@ -42,7 +42,7 @@ export default function Resume() {
           <ul className="resume-list">
             <li>Leveraged AI-assisted development tools to accelerate delivery, improve code quality, and support problem-solving across tasks.</li>
             <li>Completed an intensive 8-week training academy focused on modern full-stack engineering practices in a fast-paced, project-led environment.</li>
-            <li>Collaborated in small agile teams to design and build a three-tier job application system (database, API, and UI layers).</li>
+            <li>Collaborated in small agile teams to design and build a three-tier job application system, with database, API, and UI layers.</li>
             <li>Developed backend services using Express and TypeScript, implemented data access with Prisma, and integrated front-end components using Axios and Bootstrap.</li>
             <li>Contributed to a GitHub Actions CI pipeline with automated testing, code quality checks, and build validation, and incorporated accessibility testing using Pa11y.</li>
           </ul>
