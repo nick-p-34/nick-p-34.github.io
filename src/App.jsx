@@ -2,7 +2,6 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import CustomCursor from "./components/CustomCursor";
 import "./style.css";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -39,7 +38,6 @@ export default function App() {
 
   return (
     <>
-      <CustomCursor />
       <Router>
         <div className="app">
           <NavBar theme={theme} onToggleTheme={toggleTheme} />
