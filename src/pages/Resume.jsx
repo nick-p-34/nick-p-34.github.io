@@ -15,7 +15,7 @@ export default function Resume() {
 
         <div className="header-left">
           <h2 className="section-title">Nick Parke</h2>
-          <p className="subtitle">Software Developer</p>
+          <p className="subtitle">Software Developer at Kainos</p>
         </div>
 
         <div className="contact-info">

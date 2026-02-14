@@ -174,7 +174,7 @@ export default function Contact() {
                 color:
                   subjectObj.value === ""
                     ? "var(--secondary-text)"
-                    : "var(--text-color)",
+                    : "var(--text-high)",
               }}
             >
               {subjectObj.label}
