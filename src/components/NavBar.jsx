@@ -184,8 +184,16 @@ export default function NavBar({ onToggleTheme, theme }) {
                 className="dropdown-menu animated-dropdown"
                 role="menu"
               >
-                <li><a role="menuitem" href="/404">TBD 1</a></li>
-                <li><a role="menuitem" href="/404">TBD 2</a></li>
+                <li>
+                  <a
+                      role="menuitem"
+                      href="https://zenithracingteam.co.uk/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                  >
+                    Zenith Racing Team
+                  </a>
+                </li>
               </ul>
             )}
           </li>
@@ -258,8 +266,16 @@ export default function NavBar({ onToggleTheme, theme }) {
                   }`}
                   onAnimationEnd={handleDropdownAnimationEnd}
                 >
-                  <li><Link to="/404" onClick={handleMobileToggle}>TBD 1</Link></li>
-                  <li><Link to="/404" onClick={handleMobileToggle}>TBD 2</Link></li>
+                  <li>
+                    <a
+                        href="https://zenithracingteam.co.uk/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={handleMobileToggle}
+                    >
+                      Zenith Racing Team
+                    </a>
+                  </li>
                 </ul>
               )}
             </li>

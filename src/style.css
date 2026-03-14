@@ -670,7 +670,15 @@ textarea { resize: none; }
   outline: none; border-color: rgba(191,0,255,0.35); box-shadow: 0 12px 36px rgba(191,0,255,0.06); transform: scale(1.01);
 }
 
-.dropdown .dropdown-menu { left: 0 !important; transform: none !important; min-width: 100%; margin-top: 0.5rem; }
+.dropdown .dropdown-menu {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: max-content;
+  width: max-content;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+}
+
 .dropdown .dropdown-menu, .dropdown .dropdown-menu li { outline: none !important; box-shadow: none !important; }
 .dropdown .dropdown-menu li { position: relative; }
 .dropdown .dropdown-menu li span { display: inline-block; position: relative; }
