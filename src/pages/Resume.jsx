@@ -28,9 +28,7 @@ export default function Resume() {
 
       <div className="resume-section">
         <h3 className="section-title">Professional Summary</h3>
-        <p>
-           Dedicated and adaptable Software Engineer with a BSc in Computer Science from Queen’s University Belfast and experience delivering production-ready systems across frontend and backend domains. Currently a Trainee Software Engineer at Kainos, undertaking an intensive 8-week AI-first engineering academy, leveraging AI powered tools to accelerate delivery and learning. Experienced in building responsive web applications, microservices, and cloud-deployed solutions using TypeScript, Python, Java, SQL, and modern frameworks. Strong grounding in automated testing, CI/CD, and Agile delivery, with a focus on clean, maintainable code. Comfortable and experienced collaborating in cross-functional teams to deliver end-to-end projects, leveraging AI-assisted development tools and modern engineering practices. Committed to continuous learning and building robust, user-focused software solutions.
-         </p>
+        <p>Self-motivated software engineer with a BSc in Computer Science from Queen’s University Belfast and a proven track record of delivering robust, full-stack web solutions. Combining rigorous training in modern full-stack practices with immediate production impact, I have autonomously managed and modernised shared component libraries and frontend repositories for high-profile tech conferences. Adept at leading major codebase transformations, including full migrations to strict-mode TypeScript and Playwright testing frameworks, as well as implementing locale-driven architectures. Equipped with a strong foundation in TypeScript, Python, and Java, I am highly comfortable driving independent discovery, collaborating with external client stakeholders, and utilising CI/CD pipelines to ship high-quality, production-ready software.</p>
       </div>
 
       <div className="resume-section">
@@ -40,11 +38,12 @@ export default function Resume() {
           <p className="job-title">Software Engineer (T) | Feb 2026 – Present</p>
           <p className="job-company">Kainos, Belfast</p>
           <ul className="resume-list">
-            <li>Leveraged AI-assisted development tools to accelerate delivery, improve code quality, and support problem-solving across tasks.</li>
-            <li>Completed an intensive 8-week training academy focused on modern full-stack engineering practices in a fast-paced, project-led environment.</li>
-            <li>Collaborated in small agile teams to design and build a three-tier job application system, with database, API, and UI layers.</li>
-            <li>Developed backend services using Express and TypeScript, implemented data access with Prisma, and integrated front-end components using Axios and Bootstrap.</li>
-            <li>Contributed to a GitHub Actions CI pipeline with automated testing, code quality checks, and build validation, and incorporated accessibility testing using Pa11y.</li>
+            <li>Completed an 8-week, AI-first, full-stack engineering academy, working in an agile team to design and build a three-tier application using TypeScript, Express, Prisma, and Bootstrap.</li>
+            <li>Established GitHub Actions CI pipelines with automated testing, code quality checks, and Pa11y accessibility validation to automate and improve the development lifecycle.</li>
+            <li>Served as the primary developer managing the shared component library and frontend repositories for AICON Belfast, AICON Canada, and BelTech, implementing a locale-driven architecture supporting dynamic regional configurations.</li>
+            <li>Led a comprehensive refactor across three major codebases, migrating legacy JavaScript to strict-mode TypeScript to improve type safety, code reliability, and developer experience.</li>
+            <li>Overhauled the end-to-end testing infrastructure by replacing basic Jest & Puppeteer setups with full Playwright Component Testing and automated smoke testing suites across all repositories.</li>
+            <li>Partnered directly with external client stakeholders to manage agile feature backlogs, execute site updates for major events, and drive independent discovery for bug fixes and UI performance optimisations.</li>
           </ul>
         </div>
 
